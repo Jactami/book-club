@@ -1,3 +1,15 @@
 {
-    "test": "Test"
+    "app": {
+        "name": "Buchclub ohne Namen"
+    },
+    "nav": {
+        "home": {
+            "title": "Startseite",
+            "subtitle": "Willkommen zu unserem Buch-Club"
+        },
+        "playground": {
+            "title": "Playground",
+            "subtitle": "Neue Funktionen ausprobieren und testen"
+        }
+    }
 }

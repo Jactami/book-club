@@ -1,20 +1,23 @@
 <template>
-  <main>
-    <pre>Hello World</pre>
-    <p class="text-blue-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <pre>{{ t('test') }}</pre>
-    <pre>Version: {{ version }}</pre>
-    <pre>Build Date: {{ buildDate }}</pre>
-    <MaterialSymbolsBookRibbonRounded class="h-6 w-6 text-red-500" />
-  </main>
+  <UiPage :title="t('nav.home.title')" :subtitle="t('nav.home.subtitle')">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus
+      tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+      diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci
+      nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis
+      semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque
+      congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent
+      egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit
+      sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+      Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing
+      ante non diam sodales hendrerit.
+    </p>
+  </UiPage>
 </template>
 
 <script setup lang="ts">
+import UiPage from '@/components/ui/UiPage.vue'
 import { useI18n } from 'vue-i18n'
-import MaterialSymbolsBookRibbonRounded from '~icons/material-symbols/book-ribbon-rounded'
 
 const { t } = useI18n()
-
-const version = __APP_VERSION__
-const buildDate = __APP_BUILD_DATE__
 </script>
