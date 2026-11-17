@@ -16,10 +16,11 @@
           <li v-for="item in navItems" :key="item.id">
             <RouterLink
               :to="item.href"
-              class="block rounded-border px-3 py-2 hover:bg-surface-container-high"
+              class="flex items-center gap-x-1.5 rounded-border px-3 py-2 hover:bg-surface-container-high"
               active-class="bg-surface-container-high"
             >
-              {{ item.label }}
+              <UiIcon :icon="item.icon" :label="item.label" />
+              <span>{{ item.label }} </span>
             </RouterLink>
           </li>
         </ul>
@@ -29,14 +30,15 @@
     <!-- Mobile -->
     <footer class="fixed bottom-0 z-50 w-screen bg-surface-container-highest p-1 sm:hidden">
       <nav>
-        <ul class="flex gap-x-1 text-sm">
+        <ul class="flex gap-x-1">
           <li v-for="item in navItems" :key="item.id" class="min-w-0 flex-1">
             <RouterLink
               :to="item.href"
-              class="flex justify-center rounded-border px-3 py-2 hover:bg-surface-container-high"
+              class="flex flex-col items-center rounded-border p-1.5 hover:bg-surface-container-high"
               active-class="bg-surface-container-high"
             >
-              {{ item.label }}
+              <UiIcon :icon="item.icon" :label="item.label" />
+              <span class="text-xs">{{ item.label }}</span>
             </RouterLink>
           </li>
         </ul>
@@ -48,8 +50,8 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import type { NavItem } from './types'
-
 import MaterialSymbolsMenuBookOutlineRounded from '~icons/material-symbols/menu-book-outline-rounded'
+import UiIcon from '@/components/ui/icon/UiIcon.vue'
 
 const { t } = useI18n()
 
@@ -58,17 +60,20 @@ const navItems: NavItem[] = [
     id: 'home',
     label: t('nav.home.title'),
     href: '/',
+    icon: 'home',
   },
 
   {
     id: 'vote',
     label: t('nav.vote.title'),
     href: '/vote',
+    icon: 'vote',
   },
   {
     id: 'history',
     label: t('nav.history.title'),
     href: '/history',
+    icon: 'history',
   },
 ]
 </script>
