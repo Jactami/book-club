@@ -3,7 +3,9 @@
     <AppNavigation />
     <div class="px-4 py-6 pbe-24 lg:px-10">
       <div class="mx-auto max-w-7xl">
-        <RouterView />
+        <main>
+          <RouterView />
+        </main>
       </div>
     </div>
   </div>
