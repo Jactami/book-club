@@ -32,6 +32,17 @@
     </div>
   </UiSection>
 
+  <UiSection title="Icons">
+    <div class="grid grid-cols-12 justify-center gap-1">
+      <template v-for="icon in Object.keys(icons)" :key="icon">
+        <div class="flex flex-col items-center gap-y-0.5">
+          <UiIcon :icon="icon as Icon" class="text-lg" />
+          <span>{{ icon }}</span>
+        </div>
+      </template>
+    </div>
+  </UiSection>
+
   <UiSection title="Buch-Service">
     <button @click="fetchBooks">Suche Buch</button>
     <pre>Query: {{ query }}</pre>
@@ -46,6 +57,8 @@
 </template>
 
 <script setup lang="ts">
+import { icons, type Icon } from '@/components/ui/icon/types'
+import UiIcon from '@/components/ui/icon/UiIcon.vue'
 import UiHeading from '@/components/ui/UiHeading.vue'
 import UiSection from '@/components/ui/UiSection.vue'
 import { useLogger } from '@/composables/log'
