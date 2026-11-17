@@ -59,10 +59,16 @@ const navItems: NavItem[] = [
     label: t('nav.home.title'),
     href: '/',
   },
+
   {
-    id: 'playground',
-    label: t('nav.playground.title'),
-    href: '/playground',
+    id: 'vote',
+    label: t('nav.vote.title'),
+    href: '/vote',
+  },
+  {
+    id: 'history',
+    label: t('nav.history.title'),
+    href: '/history',
   },
 ]
 </script>

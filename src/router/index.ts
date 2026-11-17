@@ -21,6 +21,18 @@ const routes: RouteRecordRaw[] = [
       devOnly: true,
     },
   },
+  // VOTE
+  {
+    path: '/vote',
+    name: 'vote',
+    component: () => import('../views/VoteView.vue'),
+  },
+  // HISTORY
+  {
+    path: '/history',
+    name: 'history',
+    component: () => import('../views/HistoryView.vue'),
+  },
   // NOT FOUND
   {
     path: '/:pathMatch(.*)*',

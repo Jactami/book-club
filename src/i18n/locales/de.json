@@ -3,6 +3,10 @@
         "name": "Buchclub ohne Namen"
     },
     "nav": {
+        "history": {
+            "title": "Historie",
+            "subtitle": "Die bisherigen Buch-Club-Aktivitäten"
+        },
         "home": {
             "title": "Startseite",
             "subtitle": "Willkommen zu unserem Buch-Club"
@@ -10,6 +14,10 @@
         "playground": {
             "title": "Playground",
             "subtitle": "Neue Funktionen ausprobieren und testen"
+        },
+        "vote": {
+            "title": "Abstimmung",
+            "subtitle": "Über die nächste Lektüre abstimmen"
         }
     }
 }
