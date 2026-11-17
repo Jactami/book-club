@@ -50,7 +50,8 @@ import UiPage from '@/components/ui/UiPage.vue'
 import UiSection from '@/components/ui/UiSection.vue'
 import { useLogger } from '@/composables/log'
 import { useBookService } from '@/composables/services/book'
-import { ref } from 'vue'
+import { supabase } from '@/db'
+import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -72,4 +73,9 @@ async function fetchBooks() {
   const coverId = response.value.data.docs[0].cover_i
   cover.value = bookService.getCover(coverId)
 }
+
+onMounted(async () => {
+  const { data } = await supabase.from('books').select()
+  console.log(data)
+})
 </script>
