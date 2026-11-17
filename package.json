@@ -13,7 +13,8 @@
     "lint": "run-s \"lint:*\"",
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "db:types": "supabase gen types typescript --schema public > src/db/types/supabase.ts && prettier --write src/db/types/supabase.ts"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.3.0",
