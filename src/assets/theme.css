@@ -55,4 +55,6 @@
   --radius-border: var(--radius-md);
 
   /* Fonts */
+  --font-text: 'Inter', sans-serif;
+  --font-heading: 'Cormorant Garamond', serif;
 }

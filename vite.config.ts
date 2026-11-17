@@ -15,7 +15,11 @@ export default defineConfig({
     vueDevTools(),
     tailwindcss(),
     Icons({ compiler: 'vue3' }),
-    Unfont(),
+    Unfont({
+      fontsource: {
+        families: ['Inter', 'Cormorant Garamond'],
+      },
+    }),
     visualizer({
       template: 'treemap', // sunburst | treemap | network
       emitFile: true,
