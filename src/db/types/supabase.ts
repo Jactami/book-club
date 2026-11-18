@@ -43,6 +43,64 @@ export type Database = {
         }
         Relationships: []
       }
+      history: {
+        Row: {
+          book_id: string
+          created_at: string | null
+          date: string
+          id: string
+          updated_at: string | null
+        }
+        ComputedFields: never
+        Insert: {
+          book_id: string
+          created_at?: string | null
+          date: string
+          id?: string
+          updated_at?: string | null
+        }
+        Update: {
+          book_id?: string
+          created_at?: string | null
+          date?: string
+          id?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'history_book_id_fkey'
+            columns: ['book_id']
+            isOneToOne: true
+            referencedRelation: 'books'
+            referencedColumns: ['id']
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          first_name: string | null
+          id: string
+          last_name: string | null
+          updated_at: string | null
+        }
+        ComputedFields: never
+        Insert: {
+          created_at?: string | null
+          first_name?: string | null
+          id: string
+          last_name?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
