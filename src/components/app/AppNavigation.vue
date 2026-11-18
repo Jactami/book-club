@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Desktop -->
-    <aside class="sticky top-0 hidden h-dvh w-72 bg-primary p-3 text-on-primary sm:block">
+    <aside class="sticky top-0 hidden h-dvh w-72 bg-primary p-3 text-on-primary md:block">
       <nav>
         <!-- Logo -->
         <div class="p-4 text-center font-heading text-2xl">
@@ -28,7 +28,7 @@
     </aside>
 
     <!-- Mobile -->
-    <footer class="fixed bottom-0 z-50 w-screen bg-primary p-1 text-on-primary sm:hidden">
+    <footer class="fixed bottom-0 z-50 w-screen bg-primary p-1 text-on-primary md:hidden">
       <nav>
         <ul class="flex gap-x-1">
           <li v-for="item in navItems" :key="item.id" class="min-w-0 flex-1">
