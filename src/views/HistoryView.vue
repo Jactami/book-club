@@ -9,6 +9,7 @@
           class="border- flex aspect-2/3 items-center justify-center overflow-hidden rounded-default border-border bg-surface p-2"
         >
           <img
+            v-if="item.books.cover"
             :src="item.books.cover"
             :alt="`Cover - ${item.books.title}`"
             class="size-full object-contain"
@@ -57,6 +58,5 @@ async function fetchHistory() {
   if (data) {
     history.value = data
   }
-  console.log(data)
 }
 </script>
