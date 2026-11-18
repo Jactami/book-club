@@ -25,9 +25,11 @@
           {{ item.books.authors.join(', ') }}
         </p>
 
-        <span class="mt-3 block text-sm text-text-muted">
+        <div
+          class="mt-3 size-fit rounded-full border border-border bg-surface-muted px-2 py-1 text-sm text-text-muted"
+        >
           {{ d(item.date, { year: 'numeric', month: 'long' }) }}
-        </span>
+        </div>
       </li>
     </ol>
   </div>
