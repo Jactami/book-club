@@ -61,9 +61,9 @@ import { icons, type Icon } from '@/components/ui/icon/types'
 import UiIcon from '@/components/ui/icon/UiIcon.vue'
 import UiHeading from '@/components/ui/UiHeading.vue'
 import UiSection from '@/components/ui/UiSection.vue'
+import { useDb } from '@/composables/db'
 import { useLogger } from '@/composables/log'
 import { useBookService } from '@/composables/services/book'
-import { supabase } from '@/db'
 import { onMounted, ref } from 'vue'
 
 const version = __APP_VERSION__
@@ -84,8 +84,12 @@ async function fetchBooks() {
   cover.value = bookService.getCover(coverId)
 }
 
-onMounted(async () => {
-  const { data } = await supabase.from('books').select()
-  console.log(data)
-})
+const db = useDb()
+
+async function fetchHistory() {
+  const { data } = await db.getHistory()
+  logger.log('History', data)
+}
+
+onMounted(fetchHistory)
 </script>
