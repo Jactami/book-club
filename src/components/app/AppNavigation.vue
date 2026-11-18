@@ -6,7 +6,7 @@
         <!-- Logo -->
         <div class="p-4 text-center font-heading text-2xl">
           <RouterLink to="/" class="flex flex-col items-center justify-center gap-1">
-            <MaterialSymbolsMenuBookOutlineRounded class="text-7xl" aria-hidden="true" />
+            <MaterialSymbolsLightMenuBookRounded class="text-7xl" aria-hidden="true" />
             <span>{{ t('app.name') }}</span>
           </RouterLink>
         </div>
@@ -50,7 +50,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import type { NavItem } from './types'
-import MaterialSymbolsMenuBookOutlineRounded from '~icons/material-symbols/menu-book-outline-rounded'
+import MaterialSymbolsLightMenuBookRounded from '~icons/material-symbols-light/menu-book-rounded'
 import UiIcon from '@/components/ui/icon/UiIcon.vue'
 
 const { t } = useI18n()
