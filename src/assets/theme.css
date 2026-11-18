@@ -1,60 +1,27 @@
-/* https://m3.material.io/styles/color/roles */
-
 @theme {
-  /* Base colors */
-  --color-primary: #51382b;
-  --color-on-primary: #ffffff;
-  --color-primary-container: #e9d9cb;
-  --color-on-primary-container: #38251d;
-
-  --color-secondary: #656d50;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #e4e6d9;
-  --color-on-secondary-container: #353b2b;
-
-  --color-tertiary: #a87a32;
-  --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #f3e5c9;
-  --color-on-tertiary-container: #684719;
-
-  /* Neutral colors */
-  --color-surface: #f3ebdd;
-  --color-surface-inverse: #38251d;
-
-  --color-surface-container-lowest: #fcf9f3;
-  --color-surface-container-low: #f8f3ea;
-  --color-surface-container: #e9dfd0;
-  --color-surface-container-high: #d9cdbb;
-  --color-surface-container-highest: #bbae9b;
-
-  --color-on-surface: #29231f;
-  --color-on-surface-variant: #655b50;
-  --color-on-surface-muted: #8a8074;
-  --color-on-surface-inverse: #fcf9f3;
-
-  --color-outline: #bbae9b;
-  --color-outline-variant: #d9cdbb;
-
-  /* Status colors */
-  --color-error: #a33d35;
-  --color-on-error: #ffffff;
-  --color-error-container: #f4dad6;
-  --color-on-error-container: #641e19;
-
-  --color-success: #526c48;
-  --color-on-success: #ffffff;
-  --color-success-container: #dfe9d8;
-  --color-on-success-container: #2c4327;
-
-  --color-warning: #93651f;
-  --color-on-warning: #ffffff;
-  --color-warning-container: #f3e5c9;
-  --color-on-warning-container: #684719;
-
-  /* Shape */
-  --radius-border: var(--radius-lg);
-
   /* Fonts */
   --font-heading: 'Cormorant Garamond', 'Georgia', serif;
   --font-body: 'Inter', sans-serif;
+
+  /* Brand colors */
+  --color-primary: #142d23;
+  --color-primary-hover: #1d3b2e;
+
+  /* Background colors */
+  --color-background: #f4efe5;
+  --color-surface: #fbf8f1;
+  --color-surface-muted: #ede6d9;
+  --color-surface-accent: #dce4d5;
+
+  /* Text colors */
+  --color-text: #242820;
+  --color-text-muted: #716f64;
+  --color-on-primary: #ffffff;
+
+  /* Border colors */
+  --color-border: #ded5c6;
+  --color-border-strong: #c8bca9;
+
+  /* Shape */
+  --radius-default: 0.75rem;
 }

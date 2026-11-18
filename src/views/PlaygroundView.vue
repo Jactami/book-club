@@ -7,27 +7,11 @@
     >
       <div>
         <div class="bg-primary text-on-primary">Primary</div>
-        <div class="bg-primary-container text-on-primary-container">Primary Container</div>
-        <div class="bg-secondary text-on-secondary">Secondary</div>
-        <div class="bg-secondary-container text-on-secondary-container">Secondary Container</div>
-
-        <div class="bg-tertiary text-on-tertiary">Tertiary</div>
-        <div class="bg-tertiary-container text-on-tertiary-container">Tertiary Container</div>
       </div>
       <div>
-        <div class="bg-surface-container-lowest text-on-surface">Container lowest</div>
-        <div class="bg-surface-container-low text-on-surface">Container low</div>
-        <div class="bg-surface-container text-on-surface">Container</div>
-        <div class="bg-surface-container-high text-on-surface">Container high</div>
-        <div class="bg-surface-container-highest text-on-surface">Container highest</div>
-      </div>
-      <div>
-        <div class="bg-success text-on-success">Success</div>
-        <div class="bg-success-container text-on-success-container">Success Container</div>
-        <div class="bg-warning text-on-warning">Warning</div>
-        <div class="bg-warning-container text-on-warning-container">Warning Container</div>
-        <div class="bg-error text-on-error">Error</div>
-        <div class="bg-error-container text-on-error-container">Error Container</div>
+        <div class="bg-surface">Surface</div>
+        <div class="bg-surface-muted">Surface Muted</div>
+        <div class="bg-surface-accent text-primary">Surface Accent</div>
       </div>
     </div>
   </UiSection>
