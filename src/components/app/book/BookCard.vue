@@ -5,8 +5,8 @@
       class="mt-2 flex aspect-7/8 items-center justify-center rounded-default bg-surface-muted p-4"
     >
       <img
-        v-if="book.cover"
-        :src="book.cover"
+        v-if="book.cover_url"
+        :src="book.cover_url"
         :alt="book.title"
         loading="lazy"
         class="max-h-full max-w-full object-contain shadow-md"

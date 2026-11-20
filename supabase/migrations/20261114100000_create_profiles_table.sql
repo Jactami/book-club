@@ -1,15 +1,21 @@
 --
 -- https://supabase.com/docs/guides/auth/managing-user-data
 --
-CREATE TABLE public.profiles(
-    id uuid PRIMARY KEY NOT NULL REFERENCES auth.users ON DELETE CASCADE,
-    created_at timestamp with time zone DEFAULT now(),
-    updated_at timestamp with time zone,
-    first_name text,
-    last_name text
+CREATE TYPE public.user_role AS enum(
+    'user',
+    'admin'
 );
 
--- Handle the updated_at moddatetime
+CREATE TABLE public.profiles(
+    id uuid PRIMARY KEY REFERENCES auth.users ON DELETE CASCADE,
+    created_at timestamp with time zone DEFAULT now(),
+    updated_at timestamp with time zone,
+    first_name text CHECK (length(trim(first_name)) > 0),
+    last_name text CHECK (length(trim(last_name)) > 0),
+    user_role user_role NOT NULL DEFAULT 'user'
+);
+
+-- Moddatetime trigger
 CREATE TRIGGER handle_updated_at_profiles
     BEFORE UPDATE ON public.profiles
     FOR EACH ROW

@@ -6,38 +6,38 @@ export type Database = {
       books: {
         Row: {
           authors: string[]
-          cover: string | null
+          cover_url: string | null
           created_at: string | null
           id: string
           isbn_10: string | null
           isbn_13: string | null
-          pages: number | null
-          published: number | null
+          page_count: number | null
+          publication_year: number | null
           title: string
           updated_at: string | null
         }
         ComputedFields: never
         Insert: {
           authors: string[]
-          cover?: string | null
+          cover_url?: string | null
           created_at?: string | null
           id?: string
           isbn_10?: string | null
           isbn_13?: string | null
-          pages?: number | null
-          published?: number | null
+          page_count?: number | null
+          publication_year?: number | null
           title: string
           updated_at?: string | null
         }
         Update: {
           authors?: string[]
-          cover?: string | null
+          cover_url?: string | null
           created_at?: string | null
           id?: string
           isbn_10?: string | null
           isbn_13?: string | null
-          pages?: number | null
-          published?: number | null
+          page_count?: number | null
+          publication_year?: number | null
           title?: string
           updated_at?: string | null
         }
@@ -47,23 +47,23 @@ export type Database = {
         Row: {
           book_id: string
           created_at: string | null
-          date: string
           id: string
+          period: string
           updated_at: string | null
         }
         ComputedFields: never
         Insert: {
           book_id: string
           created_at?: string | null
-          date: string
           id?: string
+          period: string
           updated_at?: string | null
         }
         Update: {
           book_id?: string
           created_at?: string | null
-          date?: string
           id?: string
+          period?: string
           updated_at?: string | null
         }
         Relationships: [
@@ -83,6 +83,7 @@ export type Database = {
           id: string
           last_name: string | null
           updated_at: string | null
+          user_role: Database['public']['Enums']['user_role']
         }
         ComputedFields: never
         Insert: {
@@ -91,12 +92,118 @@ export type Database = {
           id: string
           last_name?: string | null
           updated_at?: string | null
+          user_role?: Database['public']['Enums']['user_role']
         }
         Update: {
           created_at?: string | null
           first_name?: string | null
           id?: string
           last_name?: string | null
+          updated_at?: string | null
+          user_role?: Database['public']['Enums']['user_role']
+        }
+        Relationships: []
+      }
+      proposals: {
+        Row: {
+          book_id: string
+          created_at: string | null
+          id: string
+          round_id: string
+          updated_at: string | null
+          user_id: string
+        }
+        ComputedFields: never
+        Insert: {
+          book_id: string
+          created_at?: string | null
+          id?: string
+          round_id: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          book_id?: string
+          created_at?: string | null
+          id?: string
+          round_id?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'proposals_book_id_fkey'
+            columns: ['book_id']
+            isOneToOne: false
+            referencedRelation: 'books'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'proposals_round_id_fkey'
+            columns: ['round_id']
+            isOneToOne: false
+            referencedRelation: 'voting_rounds'
+            referencedColumns: ['id']
+          },
+        ]
+      }
+      votes: {
+        Row: {
+          created_at: string | null
+          id: string
+          points: number
+          proposal_id: string
+          updated_at: string | null
+          user_id: string
+        }
+        ComputedFields: never
+        Insert: {
+          created_at?: string | null
+          id?: string
+          points: number
+          proposal_id: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          points?: number
+          proposal_id?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'votes_proposal_id_fkey'
+            columns: ['proposal_id']
+            isOneToOne: false
+            referencedRelation: 'proposals'
+            referencedColumns: ['id']
+          },
+        ]
+      }
+      voting_rounds: {
+        Row: {
+          created_at: string | null
+          id: string
+          is_open: boolean
+          period: string
+          updated_at: string | null
+        }
+        ComputedFields: never
+        Insert: {
+          created_at?: string | null
+          id?: string
+          is_open?: boolean
+          period: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          is_open?: boolean
+          period?: string
           updated_at?: string | null
         }
         Relationships: []
@@ -109,7 +216,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      user_role: 'user' | 'admin'
     }
     CompositeTypes: {
       [_ in never]: never
@@ -220,6 +327,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      user_role: ['user', 'admin'],
+    },
   },
 } as const

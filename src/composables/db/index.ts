@@ -1,7 +1,7 @@
 import { supabase } from '@/db'
 
 function getHistory() {
-  return supabase.from('history').select('*, books(*)').order('date', { ascending: false })
+  return supabase.from('history').select('*, books(*)').order('period', { ascending: false })
 }
 
 export function useDb() {

@@ -22,7 +22,7 @@
 
     <ol class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
       <li v-for="item in selectedHistory" :key="item.id" class="min-w-0">
-        <BookCard :book="item.books" :date="new Date(item.date)" />
+        <BookCard :book="item.books" :date="new Date(item.period)" />
       </li>
     </ol>
   </div>
@@ -45,7 +45,7 @@ const selectedHistory = computed(() => {
   if (!selectedYear.value) return history.value
 
   return history.value?.filter((item) => {
-    const year = new Date(item.date).getFullYear()
+    const year = new Date(item.period).getFullYear()
     return year === selectedYear.value
   })
 })
@@ -53,7 +53,7 @@ const selectedHistory = computed(() => {
 const years = computed(() => {
   const yearSet = new Set<number>()
   history.value?.forEach((item) => {
-    const year = new Date(item.date).getFullYear()
+    const year = new Date(item.period).getFullYear()
     yearSet.add(year)
   })
 
