@@ -5,10 +5,10 @@
     "nav": {
         "history": {
             "title": "Historie",
-            "subtitle": "Unsere bisher gelesenen Bücher"
+            "subtitle": "Was wir bisher gelesen haben"
         },
         "home": {
-            "title": "Startseite",
+            "title": "Übersicht",
             "subtitle": "Willkommen zu unserem Buch-Club"
         },
         "playground": {
@@ -17,7 +17,7 @@
         },
         "vote": {
             "title": "Abstimmung",
-            "subtitle": "Über die nächste Lektüre abstimmen"
+            "subtitle": "Was wir als nächstes lesen wollen"
         }
     }
 }

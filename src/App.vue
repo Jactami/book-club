@@ -1,16 +1,21 @@
 <template>
-  <div class="min-h-screen sm:grid sm:grid-cols-[auto_1fr]">
-    <AppNavigation />
-    <div class="px-4 py-6 pbe-24 lg:px-10">
-      <div class="mx-auto max-w-7xl">
-        <main>
-          <RouterView />
-        </main>
-      </div>
+  <div class="min-h-screen">
+    <!-- Header -->
+    <AppHeader />
+
+    <!-- Main Body -->
+    <div class="container mx-auto px-4 pt-6 pb-24 sm:pb-6 lg:px-10">
+      <main>
+        <RouterView />
+      </main>
     </div>
+
+    <!-- Footer -->
+    <AppMobileNavigation />
   </div>
 </template>
 
 <script setup lang="ts">
-import AppNavigation from '@/components/app/AppNavigation.vue'
+import AppHeader from '@/components/app/AppHeader.vue'
+import AppMobileNavigation from '@/components/app/AppMobileNavigation.vue'
 </script>
