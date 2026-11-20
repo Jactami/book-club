@@ -7,11 +7,11 @@
     >
       <div>
         <div class="bg-primary text-on-primary">Primary</div>
+        <div class="bg-secondary text-on-secondary">Secondary</div>
       </div>
       <div>
         <div class="bg-surface">Surface</div>
         <div class="bg-surface-muted">Surface Muted</div>
-        <div class="bg-surface-accent text-primary">Surface Accent</div>
       </div>
     </div>
   </UiSection>
