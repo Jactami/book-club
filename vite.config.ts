@@ -17,7 +17,7 @@ export default defineConfig({
     Icons({ compiler: 'vue3' }),
     Unfont({
       fontsource: {
-        families: ['Inter', 'Cormorant Garamond'],
+        families: ['Inter', 'Fraunces'],
       },
     }),
     visualizer({
