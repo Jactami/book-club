@@ -1,5 +1,5 @@
 <template>
-  <header class="my-4">
+  <header class="my-6">
     <h1 class="text-3xl leading-tight font-bold text-pretty sm:text-4xl">{{ title }}</h1>
     <p v-if="subtitle" class="text-lg leading-tight text-pretty text-text-muted">
       {{ subtitle }}
