@@ -4,23 +4,23 @@
   --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
 
   /* Brand colors */
-  --color-primary: #142d23;
-  --color-primary-hover: #1d3b2e;
+  --color-primary: #1f3d36;
+  --color-secondary: #b4431f;
 
   /* Background colors */
-  --color-background: #f4efe5;
-  --color-surface: #fbf8f1;
-  --color-surface-muted: #ede6d9;
-  --color-surface-accent: #dce4d5;
+  --color-background: #f6f1e7;
+  --color-surface: #fffbf2;
+  --color-surface-muted: #efe7d6;
 
   /* Text colors */
-  --color-text: #242820;
-  --color-text-muted: #716f64;
-  --color-on-primary: #ffffff;
+  --color-text: #1e2b27;
+  --color-text-muted: #5a645f;
+  --color-on-primary: #f6f1e7;
+  --color-on-secondary: #fff;
 
   /* Border colors */
-  --color-border: #ded5c6;
-  --color-border-strong: #c8bca9;
+  --color-border: #ddd3bf;
+  --color-border-strong: #c9bea8;
 
   /* Shape */
   --radius-default: 0.75rem;

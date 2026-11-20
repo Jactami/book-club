@@ -3,13 +3,11 @@
 @import './theme.css';
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--color-background);
+  @apply bg-background font-body;
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--font-heading);
-  color: var(--color-primary);
+  @apply font-heading text-primary;
 }
