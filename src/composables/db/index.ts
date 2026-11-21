@@ -1,6 +1,6 @@
 import { supabase } from '@/db'
 
-function getHistory() {
+export function getHistory() {
   return supabase.from('history').select('*, books(*)').order('period', { ascending: false })
 }
 

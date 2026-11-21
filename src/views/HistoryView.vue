@@ -32,13 +32,12 @@
 import BookCard from '@/components/app/book/BookCard.vue'
 import UiHeading from '@/components/ui/UiHeading.vue'
 import { useDb } from '@/composables/db'
+import type { BookHistory } from '@/types'
 import { computed, onMounted, ref } from 'vue'
 
 const db = useDb()
 
-// TODO: Add type for history
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const history = ref<any[]>()
+const history = ref<BookHistory>()
 const selectedYear = ref<number | null>(null)
 
 const selectedHistory = computed(() => {
