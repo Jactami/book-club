@@ -3,7 +3,7 @@ CREATE TABLE public.votes(
     created_at timestamp with time zone DEFAULT now(),
     updated_at timestamp with time zone,
     proposal_id uuid NOT NULL REFERENCES public.proposals(id) ON DELETE CASCADE,
-    user_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+    user_id uuid NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
     points smallint NOT NULL CHECK (points BETWEEN 1 AND 3), -- TODO: point spectrum is fixed for the moment
     UNIQUE (user_id, proposal_id) -- Ensure that a user can only vote once for a proposal
 );

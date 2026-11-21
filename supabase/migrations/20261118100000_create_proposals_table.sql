@@ -4,7 +4,7 @@ CREATE TABLE public.proposals(
     updated_at timestamp with time zone,
     round_id uuid NOT NULL REFERENCES public.voting_rounds(id) ON DELETE CASCADE,
     book_id uuid NOT NULL REFERENCES public.books(id) ON DELETE CASCADE,
-    user_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+    user_id uuid NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
     UNIQUE (round_id, book_id) -- Ensure that a book can only be proposed once per voting round
 );
 
