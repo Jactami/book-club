@@ -11,7 +11,7 @@ VALUES
 ('00000000-0000-0000-0000-000000000001', 'Frankenstein', '{"Mary Shelly"}', '3730613103', '9783730613108', 304, 1818, 'https://covers.openlibrary.org/b/id/12356249-L.jpg'),
 ('00000000-0000-0000-0000-000000000002', 'Herr der Ringe', '{"J.R.R. Tolkien"}', '3608988009', '9783608988000', 1568, 1954, 'https://covers.openlibrary.org/b/id/14625765-L.jpg'),
 ('00000000-0000-0000-0000-000000000003', 'Die Känguru-Chroniken', '{"Marc-Uwe Kling"}', '3548372570', '9783548372570', 272, 2009, 'https://covers.openlibrary.org/b/id/10479502-L.jpg'),
-('00000000-0000-0000-0000-000000000004', 'Manifest der kommunistischen Partei', '{"Karl Marx, Friedrich Engels"}', '3868200339', '9783868200331', 144, 1848, 'https://covers.openlibrary.org/b/id/13525032-L.jpg'),
+('00000000-0000-0000-0000-000000000004', 'Manifest der kommunistischen Partei', '{"Karl Marx", "Friedrich Engels"}', '3868200339', '9783868200331', 144, 1848, 'https://covers.openlibrary.org/b/id/13525032-L.jpg'),
 ('00000000-0000-0000-0000-000000000005', 'Stolz und Vorurteil', '{"Jane Austen"}', '3868206388', '9783868206388', 400, 1813, 'https://covers.openlibrary.org/b/id/10479502-L.jpg'),
 ('00000000-0000-0000-0000-000000000006', 'Der kleine Prinz', '{"Antoine de Saint-Exupéry"}', '2631124597', '9782631124595', 96, 1943, 'https://covers.openlibrary.org/b/id/13525032-L.jpg'),
 ('00000000-0000-0000-0000-000000000007', 'Er ist wieder da', '{"Timur Vermes"}', '3404171780', '9783404171781', 400, 2014, 'https://covers.openlibrary.org/b/id/7240199-L.jpg');
