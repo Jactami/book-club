@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import BookCard from '@/components/app/book/BookCard.vue'
+import BookCard from '@/components/book/BookCard.vue'
 import UiHeading from '@/components/ui/UiHeading.vue'
 import { useDb } from '@/composables/db'
 import type { BookHistory } from '@/types'

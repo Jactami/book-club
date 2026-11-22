@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import BookCover from '@/components/app/book/BookCover.vue'
+import BookCover from '@/components/book/BookCover.vue'
 import UiCard from '@/components/ui/UiCard.vue'
 import UiHeading from '@/components/ui/UiHeading.vue'
 import { useDb } from '@/composables/db'
