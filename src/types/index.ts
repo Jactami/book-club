@@ -6,6 +6,7 @@ import type { QueryData } from '@supabase/supabase-js'
 export type Profile = Tables<'profiles'>
 export type Book = Tables<'books'>
 export type History = Tables<'history'>
+export type Vote = Tables<'votes'>
 
 // Composite types
 export type BookHistory = QueryData<ReturnType<typeof getHistory>>
