@@ -9,4 +9,4 @@ export type History = Tables<'history'>
 
 // Composite types
 export type BookHistory = QueryData<ReturnType<typeof getHistory>>
-export type ActiveVoting = QueryData<ReturnType<typeof getActiveVoting>>
+export type VoteResult = QueryData<ReturnType<typeof getActiveVoting>>
