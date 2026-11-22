@@ -145,6 +145,13 @@ export type Database = {
             referencedRelation: 'voting_rounds'
             referencedColumns: ['id']
           },
+          {
+            foreignKeyName: 'proposals_user_id_fkey'
+            columns: ['user_id']
+            isOneToOne: false
+            referencedRelation: 'profiles'
+            referencedColumns: ['id']
+          },
         ]
       }
       votes: {
@@ -179,6 +186,13 @@ export type Database = {
             columns: ['proposal_id']
             isOneToOne: false
             referencedRelation: 'proposals'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'votes_user_id_fkey'
+            columns: ['user_id']
+            isOneToOne: false
+            referencedRelation: 'profiles'
             referencedColumns: ['id']
           },
         ]
