@@ -2,7 +2,7 @@
   <UiHeading />
 
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-    <div class="flex flex-col gap-2 sm:col-span-2">
+    <div class="order-last flex flex-col gap-2 sm:order-first sm:col-span-2">
       <!-- Book proposals -->
       <VoteCard
         v-for="proposal in voting?.proposals"

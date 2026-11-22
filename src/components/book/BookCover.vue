@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-2 flex aspect-7/8 items-center justify-center rounded-default bg-surface-muted p-4 transition group-hover:shadow-md"
+    class="mt-2 flex aspect-7/8 items-center justify-center rounded-default bg-surface-muted p-2 transition group-hover:shadow-md sm:p-4"
   >
     <img
       v-if="coverUrl"

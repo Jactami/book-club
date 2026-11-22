@@ -6,9 +6,11 @@
       { 'bg-surface-muted': variant === 'muted' },
     ]"
   >
-    <slot>
-      <!-- Card content goes here... -->
-    </slot>
+    <div class="overflow-hidden">
+      <slot>
+        <!-- Card content goes here... -->
+      </slot>
+    </div>
   </div>
 </template>
 

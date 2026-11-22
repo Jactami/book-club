@@ -1,12 +1,12 @@
 <template>
   <UiCard variant="surface">
-    <div class="flex items-center gap-x-6">
+    <div class="sm:flex-no-wrap flex flex-wrap items-center gap-3 sm:gap-6">
       <!-- Cover -->
-      <BookCover :cover-url="book.cover_url" :title="book.title" class="h-40" />
+      <BookCover :cover-url="book.cover_url" :title="book.title" class="h-28 sm:h-40" />
 
       <!-- Book data -->
-      <div>
-        <h3 class="line-clamp-2 text-xl font-semibold hover:underline">
+      <div class="flex-1">
+        <h3 class="line-clamp-2 text-lg font-semibold hyphens-auto hover:underline sm:text-xl">
           <a
             :href="`https://www.amazon.de/dp/${book.isbn_10}`"
             target="_blank"
@@ -23,11 +23,11 @@
       </div>
 
       <!-- Voting -->
-      <div class="flex flex-1 justify-end gap-x-2">
+      <div class="flex w-full gap-x-2 sm:w-fit">
         <button
           v-for="point in pointOptions"
           :key="point"
-          class="flex size-10 cursor-pointer items-center justify-center rounded-full border border-primary p-2 font-medium text-primary hover:bg-primary hover:text-on-primary active:scale-95"
+          class="flex size-10 flex-1 cursor-pointer items-center justify-center rounded-default border border-primary p-2 font-medium text-primary hover:bg-primary hover:text-on-primary active:scale-95 sm:rounded-full"
           @click="emit('vote', point)"
         >
           {{ point }}

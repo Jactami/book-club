@@ -9,7 +9,9 @@
     <BookCover :cover-url="book.cover_url" :title="book.title" />
 
     <!-- Book Data -->
-    <h3 class="mt-1 line-clamp-2 text-lg font-semibold group-hover:underline">{{ book.title }}</h3>
+    <h3 class="mt-1 line-clamp-2 text-lg font-semibold hyphens-auto group-hover:underline">
+      {{ book.title }}
+    </h3>
     <p class="line-clamp-1">{{ book.authors.join(', ') }}</p>
 
     <!-- Date -->
