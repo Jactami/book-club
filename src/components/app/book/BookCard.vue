@@ -1,17 +1,12 @@
 <template>
-  <a :href="`https://www.amazon.de/dp/${book.isbn_10}`" target="_blank" class="group">
+  <a
+    :href="`https://www.amazon.de/dp/${book.isbn_10}`"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group"
+  >
     <!-- Cover -->
-    <div
-      class="mt-2 flex aspect-7/8 items-center justify-center rounded-default bg-surface-muted p-4 transition group-hover:shadow-md"
-    >
-      <img
-        v-if="book.cover_url"
-        :src="book.cover_url"
-        :alt="book.title"
-        loading="lazy"
-        class="max-h-full max-w-full object-contain shadow-md transition group-hover:scale-105"
-      />
-    </div>
+    <BookCover :cover-url="book.cover_url" :title="book.title" />
 
     <!-- Book Data -->
     <h3 class="mt-1 line-clamp-2 text-lg font-semibold group-hover:underline">{{ book.title }}</h3>
@@ -28,6 +23,7 @@
 import type { Book } from '@/types'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import BookCover from './BookCover.vue'
 
 const props = defineProps<{
   book: Book
