@@ -34,8 +34,8 @@ function mergeBookSearchResults(
 ): Partial<Book> {
   // Pick the best of both worlds
   return {
-    title: openLibraryResults?.title || googleBooksResults?.title,
-    authors: openLibraryResults?.authors || googleBooksResults?.authors,
+    title: googleBooksResults?.title || openLibraryResults?.title,
+    authors: googleBooksResults?.authors || openLibraryResults?.authors,
     cover_url: openLibraryResults?.cover_url || googleBooksResults?.cover_url,
     isbn_10: googleBooksResults?.isbn_10 || openLibraryResults?.isbn_10,
     isbn_13: googleBooksResults?.isbn_13 || openLibraryResults?.isbn_13,

@@ -9,6 +9,7 @@ export async function searchOpenLibrary(title: string, author?: string) {
   const params = new URLSearchParams({
     title,
     author: author || '',
+    lang: 'de',
     fields:
       'key,title,author_name,first_publish_year,cover_i,editions,editions.key,editions.isbn,editions.cover_i',
     limit: '10',
