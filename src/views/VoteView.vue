@@ -15,8 +15,25 @@
     </div>
 
     <div>
+      <!-- Book Search TODO: Custom Components + layout -->
       <UiCard variant="surface">
-        <span>Placeholder</span>
+        <form :action="undefined" @submit.prevent="fetchBook" class="flex flex-col gap-2">
+          <input
+            v-model="bookTitle"
+            type="text"
+            placeholder="TODO: Buchtitel"
+            class="rounded-default border border-border-strong p-2"
+          />
+          <input
+            v-model="bookAuthor"
+            type="text"
+            placeholder="TODO: Autor:in"
+            class="rounded-default border border-border-strong p-2"
+          />
+          <button type="submit" class="rounded-default bg-primary p-2 text-on-primary">
+            Suchen
+          </button>
+        </form>
       </UiCard>
     </div>
   </div>
@@ -28,6 +45,7 @@ import UiHeading from '@/components/ui/UiHeading.vue'
 import VoteCard from '@/components/vote/VoteCard.vue'
 import { useDb } from '@/composables/db'
 import { useLogger } from '@/composables/log'
+import { useBookService } from '@/composables/services/book'
 import type { VoteResult } from '@/types'
 import { onMounted, ref } from 'vue'
 
@@ -43,11 +61,21 @@ async function fetchActiveVoting() {
   }
 }
 
+function handleVote(proposalId: string, points: number) {
+  logger.info(`Voted with ${points} points for proposal ${proposalId}`)
+}
+
 onMounted(() => {
   fetchActiveVoting()
 })
 
-function handleVote(proposalId: string, points: number) {
-  logger.info(`Voted with ${points} points for proposal ${proposalId}`)
+const bookTitle = ref('')
+const bookAuthor = ref('')
+
+const { state, executeImmediate } = useBookService()
+
+async function fetchBook() {
+  await executeImmediate(bookTitle.value, bookAuthor.value)
+  logger.info('Book search executed', state.value)
 }
 </script>

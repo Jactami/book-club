@@ -8,9 +8,11 @@ export type Database = {
           authors: string[]
           cover_url: string | null
           created_at: string | null
+          google_books_key: string | null
           id: string
           isbn_10: string | null
           isbn_13: string | null
+          open_library_key: string | null
           page_count: number | null
           publication_year: number | null
           title: string
@@ -21,9 +23,11 @@ export type Database = {
           authors: string[]
           cover_url?: string | null
           created_at?: string | null
+          google_books_key?: string | null
           id?: string
           isbn_10?: string | null
           isbn_13?: string | null
+          open_library_key?: string | null
           page_count?: number | null
           publication_year?: number | null
           title: string
@@ -33,9 +37,11 @@ export type Database = {
           authors?: string[]
           cover_url?: string | null
           created_at?: string | null
+          google_books_key?: string | null
           id?: string
           isbn_10?: string | null
           isbn_13?: string | null
+          open_library_key?: string | null
           page_count?: number | null
           publication_year?: number | null
           title?: string

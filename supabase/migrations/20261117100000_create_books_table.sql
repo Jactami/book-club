@@ -8,7 +8,9 @@ CREATE TABLE public.books(
     isbn_13 varchar(13) UNIQUE,
     page_count integer,
     publication_year integer,
-    cover_url text
+    cover_url text,
+    open_library_key text UNIQUE,
+    google_books_key text UNIQUE
 );
 
 -- Moddatetime trigger
