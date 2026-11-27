@@ -35,6 +35,27 @@
     </div>
   </UiSection>
 
+  <UiSection title="Forms">
+    <div class="space-y-4">
+      <InputField
+        id="basic-text-input"
+        name="basic-text-input"
+        type="text"
+        label="Basic Text Input"
+        placeholder="Type something..."
+      />
+      <InputField
+        id="error-text-input"
+        name="error-text-input"
+        type="text"
+        label="Text Input with Error Validation"
+        placeholder="Type 'valid' to pass validation"
+        :validation="(value) => value === 'valid'"
+        required
+      />
+    </div>
+  </UiSection>
+
   <UiSection title="Version">
     <pre>Version: {{ version }}</pre>
     <pre>Build Date: {{ buildDate }}</pre>
@@ -42,6 +63,7 @@
 </template>
 
 <script setup lang="ts">
+import InputField from '@/components/input/InputField.vue'
 import { icons, type Icon } from '@/components/ui/icon/types'
 import UiIcon from '@/components/ui/icon/UiIcon.vue'
 import UiButton from '@/components/ui/UiButton.vue'
