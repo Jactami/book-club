@@ -27,11 +27,12 @@
     </div>
   </UiSection>
 
-  <UiSection title="Buch-Service">
-    <button @click="fetchBooks">Suche Buch</button>
-    <pre>Query: {{ query }}</pre>
-    <img v-if="cover" :src="cover" alt="Buchcover" />
-    <pre>{{ response }}</pre>
+  <UiSection title="Buttons">
+    <div class="flex gap-2">
+      <UiButton variant="solid" title="Solid Button">Solid Button</UiButton>
+      <UiButton variant="outline" title="Outline Button">Outline Button</UiButton>
+      <UiButton variant="solid" title="Disabled Button" disabled>Disabled Button</UiButton>
+    </div>
   </UiSection>
 
   <UiSection title="Version">
@@ -43,37 +44,14 @@
 <script setup lang="ts">
 import { icons, type Icon } from '@/components/ui/icon/types'
 import UiIcon from '@/components/ui/icon/UiIcon.vue'
+import UiButton from '@/components/ui/UiButton.vue'
 import UiHeading from '@/components/ui/UiHeading.vue'
 import UiSection from '@/components/ui/UiSection.vue'
-import { useDb } from '@/composables/db'
 import { useLogger } from '@/composables/log'
-import { useBookService } from '@/composables/services/book'
-import { onMounted, ref } from 'vue'
 
 const version = __APP_VERSION__
 const buildDate = __APP_BUILD_DATE__
 
 const logger = useLogger('PlaygroundView.vue')
 logger.info('Logger is running...')
-
-const bookService = useBookService()
-const query = ref<string>('faserland')
-const response = ref<unknown>()
-const cover = ref<string>()
-
-async function fetchBooks() {
-  response.value = await bookService.getBooks(query.value)
-  // @ts-expect-error book service is not typed yet
-  const coverId = response.value.data.docs[0].cover_i
-  cover.value = bookService.getCover(coverId)
-}
-
-const db = useDb()
-
-async function fetchHistory() {
-  const { data } = await db.getHistory()
-  logger.log('History', data)
-}
-
-onMounted(fetchHistory)
 </script>
