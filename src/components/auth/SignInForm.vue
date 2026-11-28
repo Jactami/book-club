@@ -1,5 +1,5 @@
 <template>
-  <form class="space-y-6" :actions="false" @submit.prevent="handleLogin">
+  <form class="space-y-6" :actions="false" @submit.prevent="handleSignIn">
     <InputField
       id="email"
       v-model="email"
@@ -33,17 +33,28 @@
 
 <script setup lang="ts">
 import InputField from '@/components/input/InputField.vue'
-import { useLogger } from '@/composables/log'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import UiButton from '@/components/ui/UiButton.vue'
+import { useAuthStore } from '@/stores/auth'
+import { useRouter } from 'vue-router'
 
 const { t } = useI18n()
+const auth = useAuthStore()
+const router = useRouter()
 
 const email = ref('')
 const password = ref('')
 
-function handleLogin() {
-  useLogger().log('handleLogin', { email: email.value, password: password.value })
+async function handleSignIn() {
+  try {
+    await auth.signIn(email.value, password.value)
+
+    const target = router.currentRoute.value.query.redirect?.toString()
+    router.push({ path: target ? target : '/' })
+  } catch (error) {
+    // TODO: Error handling
+    console.error(error)
+  }
 }
 </script>
