@@ -27,6 +27,7 @@
     "auth": {
         "email": "E-Mail",
         "password": "Passwort",
-        "signIn": "Anmelden"
+        "signIn": "Anmelden",
+        "signOut": "Abmelden"
     }
 }

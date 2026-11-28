@@ -11,12 +11,12 @@
       <!-- Desktop Navigation -->
       <AppDesktopNavigation class="ml-auto" />
 
-      <!-- TODO: User Avatar -->
-      <div
-        class="flex aspect-square h-full items-center justify-center rounded-full bg-orange-500 p-1.5"
-      >
-        <span class="text-white">JD</span>
-      </div>
+      <!-- User Avatar -->
+      <UserAvatar v-if="auth.isAuthenticated" />
+      <!-- TODO: Sign In Link -->
+      <RouterLink v-else to="/login">
+        {{ t('auth.signIn') }}
+      </RouterLink>
     </div>
   </header>
 </template>
@@ -24,6 +24,9 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import AppDesktopNavigation from './AppDesktopNavigation.vue'
+import UserAvatar from '@/components/auth/UserAvatar.vue'
+import { useAuthStore } from '@/stores/auth.ts'
 
 const { t } = useI18n()
+const auth = useAuthStore()
 </script>
