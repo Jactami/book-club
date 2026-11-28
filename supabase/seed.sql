@@ -1,8 +1,21 @@
 -- Users
-INSERT INTO auth.users(id, email, encrypted_password, raw_user_meta_data)
+INSERT INTO auth.users(instance_id, id, aud, role, email, encrypted_password, email_confirmed_at, recovery_sent_at, last_sign_in_at, raw_app_meta_data, raw_user_meta_data, created_at, updated_at, confirmation_token, email_change, email_change_token_new, recovery_token)
 VALUES
-    ('00000000-0000-0000-0000-000000000000', 'user@example.com', '$2a$10$example_hash', '{"first_name": "John", "last_name": "Doe"}'),
-('00000000-0000-0000-0000-000000000001', 'user2@example.com', '$2a$10$example_hash', '{"first_name": "Max", "last_name": "Mustermann"}');
+    ('00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', 'john@doe.com', crypt('password', gen_salt('bf')), CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, '{"provider":"email","providers":["email"]}', '{"first_name": "John", "last_name": "Doe"}', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, '', '', '', ''),
+('00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000001', 'authenticated', 'authenticated', 'max@mustermann.com', crypt('password', gen_salt('bf')), CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, '{"provider":"email","providers":["email"]}', '{"first_name": "Max", "last_name": "Mustermann"}', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, '', '', '', '');
+
+INSERT INTO auth.identities(id, user_id, provider_id, identity_data, provider, last_sign_in_at, created_at, updated_at)(
+    SELECT
+        uuid_generate_v4(),
+        id,
+        id,
+        format('{"sub":"%s","email":"%s"}', id::text, email)::jsonb,
+        'email',
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP
+    FROM
+        auth.users);
 
 -- Books
 INSERT INTO public.books(id, title, authors, isbn_10, isbn_13, page_count, publication_year, cover_url)
