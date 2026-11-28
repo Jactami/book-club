@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import i18n from '@/i18n/index.ts'
+import { useAuthStore } from '@/stores/auth.ts'
 
 const routes: RouteRecordRaw[] = [
   // HOME
@@ -38,6 +39,9 @@ const routes: RouteRecordRaw[] = [
     path: '/login',
     name: 'login',
     component: () => import('../views/SignInView.vue'),
+    meta: {
+      public: true,
+    },
   },
   // NOT FOUND
   {
@@ -50,6 +54,26 @@ const routes: RouteRecordRaw[] = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: import.meta.env.DEV ? routes : routes.filter((route) => !route.meta?.devOnly),
+})
+
+// Navigation Guards
+router.beforeEach(async (to) => {
+  // Initialize user authentication
+  const auth = useAuthStore()
+  await auth.init()
+
+  // Redirect to login if user is not authenticated
+  if (!to.meta?.public && !auth.isAuthenticated) {
+    return `/login?redirect=${to.path}`
+  }
+
+  // Redirect to home if user is authenticated and accesses login
+  if (to.name === 'login' && auth.isAuthenticated) {
+    return '/'
+  }
+
+  // Otherwise, route to destination
+  return true
 })
 
 // Set page title
