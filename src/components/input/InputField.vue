@@ -21,6 +21,8 @@
       :placeholder="placeholder"
       :aria-describedby="describedById"
       :required="required"
+      :autofocus="autofocus"
+      :autocomplete="autocomplete"
       @keypress.enter="inputEl?.blur"
       @input="error ? validate() : undefined"
       @blur="validate"
@@ -37,8 +39,10 @@ const props = defineProps<{
   name: string
   label: string
   placeholder?: string
+  autocomplete?: string
   required?: boolean
   validation?: (value: T | undefined, ...args: unknown[]) => boolean
+  autofocus?: boolean
 }>()
 
 const value = defineModel<T>()

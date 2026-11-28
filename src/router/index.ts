@@ -33,6 +33,12 @@ const routes: RouteRecordRaw[] = [
     name: 'history',
     component: () => import('../views/HistoryView.vue'),
   },
+  // SIGN IN
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/SignInView.vue'),
+  },
   // NOT FOUND
   {
     path: '/:pathMatch(.*)*',

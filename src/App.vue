@@ -1,14 +1,12 @@
 <template>
-  <div class="min-h-screen">
+  <div class="flex min-h-screen flex-col">
     <!-- Header -->
     <AppHeader />
 
     <!-- Main Body -->
-    <div class="container mx-auto px-4 pt-6 pb-24 sm:pb-6 lg:px-10">
-      <main>
-        <RouterView />
-      </main>
-    </div>
+    <main class="container mx-auto flex flex-1 flex-col px-4 pt-6 pb-24 sm:pb-6 lg:px-10">
+      <RouterView />
+    </main>
 
     <!-- Footer -->
     <AppMobileNavigation />

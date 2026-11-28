@@ -11,6 +11,10 @@
             "title": "Übersicht",
             "subtitle": "Willkommen zu unserem Buch-Club"
         },
+        "login": {
+            "title": "Anmelden",
+            "subtitle": "Mit deinem Account anmelden"
+        },
         "playground": {
             "title": "Playground",
             "subtitle": "Neue Funktionen ausprobieren und testen"
@@ -19,5 +23,10 @@
             "title": "Abstimmung",
             "subtitle": "Was wir als nächstes lesen wollen"
         }
+    },
+    "auth": {
+        "email": "E-Mail",
+        "password": "Passwort",
+        "signIn": "Anmelden"
     }
 }
